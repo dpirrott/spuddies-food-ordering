@@ -5,20 +5,23 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
-const express = require('express');
-const { orderReadyMsg, orderEstimate, orderSubmitted } = require('../public/scripts/sms');
-const router  = express.Router();
+const express = require("express");
+// const {
+//   orderReadyMsg,
+//   orderEstimate,
+//   orderSubmitted,
+// } = require("../public/scripts/sms");
+const router = express.Router();
 const etaObj = {
-  eta: "test"
+  eta: "test",
 };
-
 
 module.exports = (db) => {
   // Full route './api/submit/'
 
   router.post("/eta", (req, res) => {
     const eta = req.body.eta;
-    orderEstimate(eta);
+    // orderEstimate(eta);
     etaObj["eta"] = eta;
 
     res.send("Notification Sent");
@@ -27,11 +30,11 @@ module.exports = (db) => {
     const time = Number(eta.slice(0, 2));
 
     // SENDS ORDER READY SMS MSG AFTER DELAY USED ON SEND ETA BUTTON (only works with seconds up to 99)
-    setTimeout(
-      orderReadyMsg, time * 1000);
+    // setTimeout(
+    //   orderReadyMsg, time * 1000);
   });
 
-  router.get('/eta', (req, res) => {
+  router.get("/eta", (req, res) => {
     res.json(etaObj);
   });
 
@@ -46,13 +49,16 @@ module.exports = (db) => {
     const orderItem = `INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES ($1, $2, $3, $4);`;
 
     // CALCULATES THE TOTAL OF ALL SUBTOTALS OF EACH ORDER
-    const total = req.body.getOrder.reduce((a,c) => Number(a) + Number(c.subtotal), 0);
+    const total = req.body.getOrder.reduce(
+      (a, c) => Number(a) + Number(c.subtotal),
+      0
+    );
 
     let promises = [];
     let params = [];
     let orderID;
     db.query(queryStringTotal, [total])
-      .then(data => {
+      .then((data) => {
         orderID = data.rows[0].id;
         console.log(`Retrieving Order ID: ${orderID}`);
         params.push(orderID);
@@ -62,10 +68,16 @@ module.exports = (db) => {
           params = params.slice(0, 1);
         }
         Promise.all(promises)
-          .then(data => {
+          .then((data) => {
             // orderSubmitted(orderID);
             console.log("Promises resolved!");
+          })
+          .catch((err) => {
+            res.status(500).json({ error: err.message });
           });
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
       });
   });
 

@@ -2,7 +2,7 @@
 require("dotenv").config();
 
 // WEB SERVER CONFIG
-const PORT = process.env.PORT || 8084;
+const PORT = 8084;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
