@@ -1,5 +1,5 @@
 // LOAD .env DATA INTO process.env
-require("dotenv").config();
+require("dotenv").config({ silent: process.env.NODE_ENV === "production" });
 
 // WEB SERVER CONFIG
 const PORT = 8084;
