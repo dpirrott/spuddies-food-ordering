@@ -6,7 +6,7 @@ Users can browse a menu, filter by category, choose individual items, update the
 The restaurant owner will receive a notification via SMS (using Twilio's API) that an order has been placed, along with the order number. They can fetch information about any order by entering the order number on their side of the website. They can then send the customer a SMS notification with an estimate as to when their order will be ready for pickup. The loading bar on the customer side will advance in proportion to the ETA provided. When the order is ready, the customer will receive another SMS notification to let them know.
 
 ## Live Demo
-Check out the live demo that's been deployed on [Heroku](https://spuddies-food-ordering.herokuapp.com/).
+Check out the live demo that's been deployed on <a href="https://spuddies-food-ordering.herokuapp.com/" target="_blank">Heroku</a>.
 
 ## Final Product
 !["Menu View"](https://github.com/Rmaceac/midterm-project/blob/master/public/docs/spuddies-front-page.png?raw=true)
