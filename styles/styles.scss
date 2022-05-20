@@ -25,7 +25,7 @@ main {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .dropdown-content a {
@@ -38,13 +38,13 @@ main {
 }
 @keyframes growDown {
   0% {
-    transform: scaleY(0)
+    transform: scaleY(0);
   }
   80% {
-    transform: scaleY(1.1)
+    transform: scaleY(1.1);
   }
   100% {
-    transform: scaleY(1)
+    transform: scaleY(1);
   }
 }
 .dropdown-content a:hover {
@@ -64,7 +64,7 @@ main {
   justify-content: center;
   align-items: flex-end;
   padding: 10px;
-  background-image: URL('https://thumbs.dreamstime.com/b/pile-potatoes-burlap-sack-background-30139847.jpg');
+  background-image: URL("https://thumbs.dreamstime.com/b/pile-potatoes-burlap-sack-background-30139847.jpg");
   background-size: 100vw 74vh;
 }
 .restaurant-title {
@@ -84,14 +84,24 @@ main {
   cursor: grabbing;
 }
 @keyframes wiggle {
-  0% { transform: rotate(0deg); }
-   80% { transform: rotate(0deg); }
-   85% { transform: rotate(10deg); }
-   95% { transform: rotate(-10deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  85% {
+    transform: rotate(10deg);
+  }
+  95% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 button {
-  font-family: 'Acme', sans-serif;
+  font-family: "Acme", sans-serif;
   color: white;
   border: none;
   cursor: pointer;
@@ -112,7 +122,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  height: 22vh;
+  height: 25vh;
   border: 4px solid rgb(190, 158, 115);
   background-color: burlywood;
   background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
@@ -125,11 +135,13 @@ button:hover {
 @keyframes slideUp {
   from {
     height: 50vh;
-  } to {
-    height: 22vh;
+  }
+  to {
+    height: 25vh;
   }
 }
 .order-container-enabled {
+  height: 25vh;
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -142,8 +154,9 @@ button:hover {
 }
 @keyframes slideDown {
   from {
-    height: 22vh;
-  } to {
+    height: 25vh;
+  }
+  to {
     height: 50vh;
   }
 }
@@ -163,7 +176,8 @@ button:hover {
 .order-entries {
   padding: 20px;
 }
-.order-entries > tr > td, tr > th {
+.order-entries > tr > td,
+tr > th {
   text-align: center;
   line-height: 20px;
 }
@@ -193,8 +207,8 @@ input {
   width: 30px;
   padding: 10px;
 }
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
 }
 .submit-total-container {
@@ -222,7 +236,8 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background: url("https://cdn.pixabay.com/photo/2020/01/30/16/19/potato-4805842_960_720.jpg") no-repeat top center;
+  background: url("https://cdn.pixabay.com/photo/2020/01/30/16/19/potato-4805842_960_720.jpg")
+    no-repeat top center;
   background-size: 100vw 74vh;
   padding: 20px 20px;
   z-index: 1;
@@ -230,7 +245,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 // SUBMIT ORDER BUTTON
 .check-out {
-  font-family: 'Acme', sans-serif;
+  font-family: "Acme", sans-serif;
   width: fit-content;
   color: white;
   border: none;
@@ -256,8 +271,8 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 20px;
   transition: 0.5s;
 }
-span::after{
-  content: ' > >';
+span::after {
+  content: " > >";
   position: relative;
   opacity: 0;
   top: 0;
@@ -278,18 +293,24 @@ span::after{
 }
 
 // GLOBAL HEADERS
-h2, h5 {
+h2,
+h5 {
   text-align: center;
 }
-h1, h2, h3, th, .total-cost  {
-  font-family: 'Acme', sans-serif;
+h1,
+h2,
+h3,
+th,
+.total-cost {
+  font-family: "Acme", sans-serif;
 }
 h2 {
   font-size: 3rem;
   color: white;
   -webkit-text-stroke: 1px black;
 }
-th, .total-cost {
+th,
+.total-cost {
   font-size: 2rem;
   color: black;
   -webkit-text-stroke: 1px white;
@@ -317,7 +338,8 @@ th, .total-cost {
 .item > img {
   width: 100%;
 }
-#next, #previous {
+#next,
+#previous {
   opacity: 1;
   transform: scale(2);
   width: fit-content;
@@ -353,18 +375,22 @@ th, .total-cost {
 @keyframes pointerLeft {
   0% {
     transform: translateX(0);
-  } 50% {
+  }
+  50% {
     transform: translateX(-5px);
-  } 100% {
+  }
+  100% {
     transform: translateX(0);
   }
 }
 @keyframes pointerRight {
   0% {
     transform: translateX(0);
-  } 50% {
+  }
+  50% {
     transform: translateX(5px);
-  } 100% {
+  }
+  100% {
     transform: translateX(0);
   }
 }
@@ -377,7 +403,9 @@ th, .total-cost {
   opacity: 70%;
   padding: 25px;
 }
-.social:hover, .copyright:hover, .chat:hover {
+.social:hover,
+.copyright:hover,
+.chat:hover {
   color: rgb(181, 106, 20);
 }
 .copyright {
