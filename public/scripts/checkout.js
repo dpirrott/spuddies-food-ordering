@@ -19,7 +19,7 @@ $(() => {
 
           // API CALL - TWILLIO - SEND TEXT TO RESTAURANT OWNER
           $.ajax({
-            url: "http://localhost:8084/api/submit",
+            url: "https://spuddies-food-ordering.herokuapp.com/api/submit",
             method: "GET",
           })
             .then((data) => {
