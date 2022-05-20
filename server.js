@@ -2,7 +2,7 @@
 require("dotenv").config({ silent: process.env.NODE_ENV === "production" });
 
 // WEB SERVER CONFIG
-const PORT = 8084;
+const PORT = process.env.PORT || 8084;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
