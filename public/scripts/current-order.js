@@ -265,7 +265,7 @@ $(() => {
       getOrder: dataOrder,
     };
     $.ajax({
-      url: "http://localhost:8084/api/submit/order",
+      url: "https://spuddies-food-ordering.herokuapp.com/api/submit/order",
       method: "POST",
       data: order,
     })

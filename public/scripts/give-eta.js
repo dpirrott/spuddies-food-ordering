@@ -1,20 +1,19 @@
 $(() => {
+  const $submit = $("#eta");
+  const $estimate = $("#estimate");
 
-  const $submit = $('#eta');
-  const $estimate = $('#estimate');
-
-  $submit.on('click', function(e) {
+  $submit.on("click", function (e) {
     e.preventDefault();
 
     // VALUE OF SEND ETA INPUT FIELD (eta in seconds)
     const estimate = {
-      eta: $estimate.val()
+      eta: $estimate.val(),
     };
 
     $.ajax({
-      url: "http://localhost:8084/api/submit/eta",
+      url: "https://spuddies-food-ordering.herokuapp.com/api/submit/eta",
       method: "POST",
-      data: estimate
+      data: estimate,
     })
       .then((data) => {
         console.log("DATA:", data);
@@ -23,8 +22,6 @@ $(() => {
         console.log("Error: ", err);
       });
 
-    $estimate.val('ETA message sent succesfully!');
-
+    $estimate.val("ETA message sent succesfully!");
   });
-
 });

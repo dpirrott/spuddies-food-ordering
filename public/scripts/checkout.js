@@ -99,7 +99,7 @@ $(() => {
 
             // RESUME LOADING BAR AFTER RESTAURANT ETA TEXT IS RECEIVED
             $.ajax({
-              url: "http://localhost:8084/api/submit/eta",
+              url: "https://spuddies-food-ordering.herokuapp.com/api/submit/eta",
               method: "GET",
             })
               .then((data) => {
